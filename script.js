@@ -13,6 +13,7 @@
 //Timeline
 
 //Loader Hide
+//1
 function loadingAnimation() {
   let tl = gsap.timeline();
   //loder
@@ -45,12 +46,13 @@ function loadingAnimation() {
   tl.to("#loader", {
     opacity: 0,
     duration: 0.2,
-    delay: 3.8,
+    // delay: 3.8,
+    delay: 0,
   });
 
   tl.from("#page1", {
     y: 1600,
-    duration: 0.5,
+    duration: 0.4,
     delay: 0.2,
     opacity: 0,
   });
@@ -58,14 +60,34 @@ function loadingAnimation() {
   tl.to("#loader", {
     display: "none",
   });
+
+  //page 1 navbar
+  tl.from("#nav", { opacity: 0 });
+  //page 1 text loader
+  tl.from("#hero1 h1,#hero2 h1,#hero3 h2,#hero4 h1", {
+    y: 120,
+    stagger: 0.2,
+  });
+}
+//2
+function cursorAnimation() {
+  document.addEventListener("mousemove", function (dets) {
+    gsap.to("#crsr", {
+      left: dets.x,
+      top: dets.y,
+    });
+  });
+
+  Shery.makeMagnet(
+    "#nav-part-2 h4" /* Element to target.*/,
+    //   ,
+    //   {
+    //   //Parameters are optional.
+    //   // ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    //   // duration: 1,
+    // }
+  );
 }
 
 loadingAnimation();
-
-document.addEventListener("mousemove", function (dets) {
-  console.log(dets);
-  gsap.to("#crsr", {
-    left: dets.x,
-    top: dets.y,
-  });
-});
+cursorAnimation();
