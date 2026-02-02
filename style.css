@@ -18,6 +18,9 @@ body {
 body {
   overflow-x: hidden;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 #crsr {
   height: 2vw;
   width: 2vw;
