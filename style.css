@@ -124,6 +124,7 @@ body::-webkit-scrollbar {
   height: 100vh;
   width: 100%;
   background-color: #151515;
+  position: relative;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
@@ -150,24 +151,30 @@ body::-webkit-scrollbar {
   width: 72%;
   margin-left: 27%;
   height: fit-content;
-  overflow: hidden;
+  overflow-y: hidden;
+  /* overflow-x: auto; */
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  /* background-color: red; */
-  /* align-items: center;
-  justify-content: center; */
-  position: relative;
-  z-index: 99999;
 }
+#hero1::before {
+  content: "01";
+  position: absolute;
 
+  font-size: 3vw;
+  font-family: "silk serif";
+
+  left: 18%;
+  top: 32%;
+}
 .hero h1 {
   font-size: 7.3vw;
   text-transform: uppercase;
   font-weight: 800;
   line-height: 7.3vw;
   /* text-align: center; */
+  /* position: relative; */
 }
+
 .hero h2 {
   font-size: 7.3vw;
   text-transform: uppercase;
@@ -258,6 +265,15 @@ body::-webkit-scrollbar {
   font-size: 7vw;
   text-transform: uppercase;
   font-weight: 800;
+  position: relative;
+}
+#page4-content h1:before {
+  content: "03";
+  position: absolute;
+  font-size: 3vw;
+  font-family: "silk serif";
+  left: -14%;
+  top: 6%;
 }
 .underline {
   height: 2px;
@@ -313,15 +329,138 @@ body::-webkit-scrollbar {
 #page5 {
   min-height: 100vh;
   width: 100%;
-  background-color: #ee0f0f;
+  background-color: #151515;
   position: relative;
   padding-top: 7.5vw;
 }
 
-#box {
-  height: 50vw;
-  width: 50vw;
-  border: 2px solid #fff;
+#page5 .elem {
+  /* background-color: #e90c0c; */
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-bottom: 1vw;
+}
+.elem h1 {
+  font-size: 7vw;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  margin-right: 16px;
+  /* background-color: #e90c0c; */
+  animation-name: textAnime;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes textAnime {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* for remove the stuck like zhutka we use calc */
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+#page5 .elem2 {
+  /* background-color: #e90c0c; */
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin-bottom: 1vw;
+}
+.elem2 h1 {
+  font-size: 7vw;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: inline-block;
+  margin-right: 16px;
+  /* background-color: #e90c0c; */
+  transform: translateX(calc(-100% - 20px));
+  animation-name: textAnime;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: reverse;
+}
+
+.elem span {
+  font-style: italic;
+  font-family: "silk serif";
+  color: transparent;
+}
+.elem2 span {
+  font-style: italic;
+  font-family: "silk serif";
+  color: transparent;
+}
+
+#footer {
+  height: 80vh;
+  width: 100%;
+  /* background-color: red; */
   position: relative;
-  left: 25%;
+  padding-left: 28vw;
+  padding-right: 2vw;
+}
+#footer h1 {
+  font-size: 7vw;
+  /* width: 60vw; */
+  text-transform: uppercase;
+  font-weight: 800;
+  /* margin-left: 28vw; */
+  position: relative;
+}
+#footer h1:before {
+  content: "04";
+  position: absolute;
+  font-size: 3vw;
+  font-family: "silk serif";
+  left: -14%;
+  top: 6%;
+}
+#footer .underline-footer {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  margin: 2vw 0;
+}
+
+#footer #footer-div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* width: 60vw; */
+  padding: 3vw 0;
+  padding-right: 15vw;
+  /* padding: 4vw 0; */
+}
+.box {
+  width: 25%;
+}
+#footer-div h6 {
+  font-size: 1.2vw;
+  margin-bottom: 0.8vw;
+  font-weight: 500;
+}
+#footer-div h5 {
+  font-size: 1.7vw;
+  margin: 0.2vh 0;
+  font-weight: 500;
+}
+
+#footer > h5 {
+  font-size: 1.2vw;
+  margin: 1vw 0;
+  font-weight: 500;
+}
+
+#end {
+  height: 10vh;
+  width: 100%;
+  background-color: #151515;
 }
